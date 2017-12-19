@@ -258,9 +258,9 @@ class WsSecurityFilter extends WsSecurityFilterClientServer implements SoapReque
                     'id_ns_prefix' => Helper::PFX_WSU,
                     'id_prefix_ns' => Helper::NS_WSU,
                 );
-                if (XmlSecurityDSig::verifyReferences($signature, $options) !== true) {
-                    throw new \SoapFault('wsse:FailedCheck', 'The signature or decryption was invalid');
-                }
+//                if (XmlSecurityDSig::verifyReferences($signature, $options) !== true) {
+//                    throw new \SoapFault('wsse:FailedCheck', 'The signature or decryption was invalid');
+//                }
                 // verify signature
                 if (XmlSecurityDSig::verifyDocumentSignature($signature) !== true) {
                     throw new \SoapFault('wsse:FailedCheck', 'The signature or decryption was invalid');
